@@ -1,0 +1,150 @@
+:root{
+  /* below we have Decalred some  variables for easy understanding of program  
+   by using var() function in CSS */
+    font-size: 16px; 
+  --font-family:'Poppins', sans-serif;
+   --color-white:#f3f3f3;
+  --color-darkblue:#1b1b32;
+  --color-darkblue-alpha:rgba(27, 27, 50, 0.8);
+  --color-green:#37af65;
+  --accent-left:rgba(58, 58, 158, 0.8); /* used for gradient */
+  --accent-right:rgba(136, 136, 207, 0.7); /* used for gradient */
+  --size-subheading:1.3rem;
+  --size-label:1.125rem;
+  
+  /* NOTe: root element is another name for <html></html> element in html 
+  NOTE: 1rem is 16px ,depends on decalring in root element
+  eg ; if font-size is 20px then 1rem=20px */
+  /* NOTE: in this program font-size is decalred as 16px ,then 1rem is 16px 
+    and for 2rem =32px  etc.
+  eg if line-height:1;  (i.e 16px) and if line-height:1.5  then its  24px/1.5rem )  */
+}
+
+/* in box-sizing -The total width/height of an element  which includes padding,
+border,margin etc .implemented for all the elements in the program. */
+*,::before, ::after{
+  box-sizing: border-box;
+}
+
+body{
+  font-family:var(--font-family);
+  font-weight: 400;
+  line-height: 1.6;
+  background-image:linear-gradient( 150deg, rgba(58, 58, 158, 0.8), rgba(136, 136, 206, 0.7) ), url(https://cdn.freecodecamp.org/testable-projects-fcc/images/survey-form-background.jpeg);
+  /* background: linear-gradient(to right,var(--accent-left),var(--accent-right)),url('D:/WEB_Development/fcc/survey-form-background.jpeg'); */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  color:var(--color-white);
+  margin:0;
+}
+
+/* UTILITIES*/
+.container{
+  margin:3rem auto;
+}
+
+
+
+header{
+ padding:2rem 1rem 1rem 1rem; 
+ /* rem fontsize is 1% of the root element fontsize 
+ eg 1rem=16px  2rem=32px etc*/
+ text-shadow: 1px 1px #333333;
+}
+
+.text-center{
+  text-align:center !important;
+}
+ 
+.description{
+  font-style: italic;
+  
+ font-size: var(--size-subheading) ;
+ margin-top:0.5rem;
+ }
+h1{
+  font-weight: 400;
+  font-size: 2rem;
+  line-height: 1.2; /* 1.2 is => to 1.2 rem of the line size */
+  margin:0;
+  margin-bottom:0.5rem;
+}
+
+  /* below are some selectors related to Form */
+   form {
+    background:var(--color-darkblue-alpha);
+    padding:2rem 0.625rem;
+    border-radius: 0.3rem;
+    width: 55% ;
+    margin: auto;  /* form is moved to center */
+   }
+
+   .form-section{
+    /* background-color: red; */
+      display:flex;
+      flex-direction: column;
+      margin:2rem;
+   }
+
+    /* The below code of line -its the space
+     between the first <p> element of the form-section to the previous form-section */
+   .form-section p {
+    line-height:1;    
+    margin:0.5rem 0.1rem;
+    }
+  
+     /* the below code of line ,is for the margin of <p>  element except for the first <p> element
+     in the form-section */
+    .form-section p:not(:nth-child(1)){
+      margin:0.5rem 0;
+    }
+ 
+    /* Below code is for size of the labels element  used inside form with calss name "form-label"*/
+    .form-label{
+      font-size:var(--size-label);
+      }
+
+      /* Below code is for size of the input element  with class name "form-control"*/
+    .form-control{
+      display:block;
+      width:100%;
+      font-size: 1rem;  /* 1rem is 16px*/
+      height:2.5rem;
+      padding:0.375rem 0.75rem;
+      border-radius: 0.3rem;
+      border:1px solid #dddddd;
+      margin-top:0.4rem;
+    }
+    .form-control:focus {
+      border-color:blue;
+      outline: 0;
+    }
+    input, select, textarea, button {
+      font-family: inherit;
+      }
+
+      #smallpara{
+        font-size: 1rem;
+      }
+      input[type="radio"],input[type="checkbox"]{
+        width:1.25rem;
+        height:1.25rem;
+        margin-right:0.625rem;
+      }
+      
+      textarea{
+        font-size: 1rem;
+        padding:0.375rem 0.75rem;
+        border:none;
+        resize:vertical;        /* user won't be able to resize the textare box */
+      }
+
+      button{
+        background:var(--color-green);
+        border:none;
+        cursor:pointer;
+        color:var(--color-white);
+        font-size: var(--size-label);
+        padding:0.75rem;
+         }
